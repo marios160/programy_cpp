@@ -1,0 +1,6 @@
+Program do odliczania czasu
+
+-----------------------------
+v2.0
+- obs³uga argumentów 
+-----------------------------

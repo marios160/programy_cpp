@@ -1,0 +1,17 @@
+nazwa pliku to nazwa uzytkownika
+
++_)(*&^%$#@!~
+@User
+*limit (w minutach)
+*akt czas limitu (w sekundach)
+*data
+
+
+
+
+
++_)(*&^%$#@!~
+@Mati
+*240
+*1700
+*20052015

@@ -1,0 +1,19 @@
+Co zmienic??
+
+- NIC
+
+--------------
+v2.0
+
+- naprawiony b³¹d zmiany aktualnego limitu
+
+--------------
+v2.1
+
+- identyfikacja tresci pliku
+
+--------------
+v2.2
+
+- narpawiony b³¹d zmiany aktualnego limitu
+- Edycja pliku z FTP

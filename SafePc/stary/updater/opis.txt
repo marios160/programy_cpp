@@ -1,0 +1,8 @@
+- szuka wszystkie safepc i zabija
+
+---------------------
+v1.1
+
+-log programu
+
+---------------------

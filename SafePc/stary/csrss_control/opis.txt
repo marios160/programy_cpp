@@ -1,0 +1,12 @@
+Porgram do kontrolowania czy csrss dziala
+
+- jesli nie ma programu to pobiera go z ftp
+
+
+------------------------------------------
+v1.1
+
+- log programu
+- jesli zobaczy updater zasypia
+
+------------------------------------------

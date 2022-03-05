@@ -1,0 +1,68 @@
+-------------------------------------
+
+zmiany w csrss:
+- proces systemowy
+- plik konfiguracyjny dla kazdego z uzytkownika z osobna
+
+
+-------------------------------------
+
+ conf.dll:
+!@#$%^&*()
+-nazwa uzytkownika
+-limit		w minutach
+-aktlimit 	w sekundach
+-data
+-reg
+-smss
+-startapk_user
+-aplikacje
+...
+-endapk_user
+
+--------------
+v2.0
+
+- liczenie czasu na podstawie czasu systemowego
+
+--------------
+v2.1
+
+- nowa obs³uga b³êdów (oddzielna funkcja)
+- tworzenie pliku domyslnego gdy aktualny jest zly
+
+--------------
+v2.2
+
+-obsluga argumentow
+
+--------------
+v2.3
+
+- tworzenie nowego usera jesli nie ma go w pliku konfiguracyjnym
+
+--------------
+v2.4
+
+- dodawanie do rejestru ca³ego komputera (wczesniej tylko do usera)
+- plik konfiguracyjny jest pobierany i wysy³any na serwer ftp
+
+--------------	
+v3.0
+
+- zmiana nazwy programu na SafePc
+- aktualizacje programu
+- liczenie nowego limitu od polnocy
+- wy³¹czenie ca³kowicie limitu jeœli mamy limit na 1440
+	
+--------------
+v3.1
+
+- log programu
+
+--------------
+v3.2
+
+- kazdy uzytkownik ma wlasny plik konfiguracyjny
+
+--------------

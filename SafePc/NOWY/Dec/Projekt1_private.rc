@@ -1,0 +1,36 @@
+/* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
+/* DO NOT EDIT! */
+
+#include <windows.h> // include for version info constants
+
+
+A ICON "Projekt1.ico"
+
+//
+// TO CHANGE VERSION INFORMATION, EDIT PROJECT OPTIONS...
+//
+1 VERSIONINFO
+FILEVERSION 1,0,0,6
+PRODUCTVERSION 1,0,0,6
+FILETYPE VFT_APP
+{
+  BLOCK "StringFileInfo"
+  {
+    BLOCK "041504E4"
+    {
+      VALUE "CompanyName", "Mateusz B³aszczak"
+      VALUE "FileVersion", "1.0.0.6"
+      VALUE "FileDescription", "Developed using the Dev-C++ IDE"
+      VALUE "InternalName", ""
+      VALUE "LegalCopyright", ""
+      VALUE "LegalTrademarks", ""
+      VALUE "OriginalFilename", ""
+      VALUE "ProductName", "Message"
+      VALUE "ProductVersion", "1.0.0.6"
+    }
+  }
+  BLOCK "VarFileInfo"
+  {
+    VALUE "Translation", 0x0415, 1252
+  }
+}

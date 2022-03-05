@@ -1,0 +1,89 @@
+Oprogramowanie s³u¿y do kontrolowania czasu dzia³ania komputera. 
+
+Pliki EXE:
+
+1. Incognito
+	G³ówny program s³u¿¹cy do odmierzania czasu pracy komputera. Program pobiera dane z serwera FTP po czym zaczyna liczyæ czas.
+	Z serwera FTP jest pobierany plik konfiguracyjny pod nazw¹ "NazwaKomputeraNazwaUzytkownika" w którym jest zawarte:
+		- linia dziwnych znakow
+		- nazwa u¿ytkownika
+		- maksymalny limit
+		- aktualny stan wykorzystanego czasu
+		- date ostatniego liczenia limitu
+	Plik zapisywany jest na komputerze pod nazw¹ "Uzytkownik"
+	Co 5 sek plik jest zapisywany z aktualnym limitem i wysy³any na serwer FTP dziêki czemu komputer mo¿na w dowolnym momencie wy³¹czyæ a aktualny limit zostanie zapisany i bêdzie mo¿na go póŸniej wykorzystaæ.
+
+2. svchost
+	Program pilnuje ¿eby g³ówny program nie zosta³ wy³¹czony, co minute sprawdza w procesach czy widnieje Incognito. Po 4 próbach wy³¹czenia g³ównego programu limit jest zerowany. Program uwzglêdnia tak¿e aktualizacje oprogramowania. Jeœli nie znajdzie w procesach Incognito, sprawdza czy jest UpdaterInc. Jesli jest to odczekuje minute i wraca do swojej pracy.
+
+3. UpdaterInc
+	Program aktualizuje oprogramowanie. Zostaje w³¹czony przez Incognito ktory sam sie zamyka po w³¹czeniu Updatera. Pobiera z serwera FTP nowy Incognito i w³¹cza go.
+	
+4. Sprawdz_limit
+	Program sprawdza stan limitu.
+	
+5. Coder
+	Program s³u¿y do kodowania i dekodowania plików. Po w³¹czeniu nale¿y wpisaæ has³o. Jesli jest niepoprawne program sie wy³¹czy.
+
+6. Dec
+	program s³u¿y do pokazywania komunikatów u¿ytkownikowi. Jest uruchamiany z odpowiednimi argumentami.
+	
+====================================================================================================
+Pliki Serwerowe:
+
+1. h.php
+	z tego pliku pobierany jest aktualny czas i data
+
+2. passw
+	W tym pliku zakodowane s¹ dane dostêpowe do serwera FTP. Program je pobiera i rozkodowuje.
+	
+3. Edytor.php
+	Jest to menu aktualnych plików konfiguracyjnych.
+
+4. "komputeruzytkownik".php
+	Jest to skrypt s³u¿¹cy do edycji pliku konfiguracyjnego. W polach wpisane s¹ aktualne dane. Aby je zmieniæ trzeba wpisac w dane pole wartoœæ na któr¹ chcemy zmieniæ, nastêpnie wpisaæ has³o i klikn¹æ wyœlij.
+	Jeœli chcemy zmieniæ plik konfiguracyjny w polu "Aktualizacja" wpisujemy "1"
+	Jeœli chcemy wgraæ now¹ aktualizacje oprogramowania w polu "Aktualizacja" wpisujemy "2"
+	Jeœli chcemy zmieniæ plik konfiguracyjny i wgraæ now¹ aktualizacje oprogramowania w polu "Aktualizacja" wpisujemy "3"
+	Program po odczytaniu zmiany automatycznie zmieni pole na 0 - nic nie rób
+
+5. usun.php
+	skrypt zmienia wartoœæ zmiany na 0 po aktualizacji. Uruchamiany jest przez program z odpowiednim parametrem usun.php?usun=komputeruzytkownik, dziêki temu wiadomo który plik konfiguracyjny zmienic
+
+6. "KOMPUTERUzytkownik"
+	Jest to plik konfiguracyjny który na komputerze jest pod nazw¹ "Uzytkownik" a na serwerze FTP "KOMPUTERUzytkownik". Jego zawartoœæ to zakodowane dane na temat limitu.
+	Poprawna odkodowana struktura pliku:
+	
+		+_)(*&^%$#@!~
+		@User
+		*limit (w minutach)
+		*akt czas limitu (w sekundach)
+		*data
+	
+	np.:
+	
+		+_)(*&^%$#@!~
+		@Mateusz
+		*240
+		*1700
+		*20052015
+		
+7. "KOMPUTERUzytkownik".txt
+	Plik serwerowy w którym jest zapisywana zmiana
+	1 - aktualizacja pliku konfiguracyjnego
+	2 - aktualizacja oprogramowania
+	3 - aktualizacja pliku konfiguracyjnego i oprogramowania
+	plik jest automatycznie uzupe³niany i kasowany przez inne skrypty
+	
+8. "KOMPUTER".txt
+	w tym pliku znajduje siê zakodowana œcie¿ka do oprogramowania na komputerze.
+	Jest pobierana przez programy i dekodowana.
+	
+
+####################################################################################################
+
+zawartoœæ wszystkich plikow które s¹ pobierane przez WWW maj¹ na pocz¹tku "|||||" oraz na koncu ":::::". Pomaga to w wyci¹gniêciu potrzebnej czêœci zawartoœci pliku.
+
+Program svchost nale¿y umieœciæ w niewidocznym i trudnodostêpnmym miejscu na komputerze. Dodaæ do autostartu komputera. Po w³¹czeniu komputera uruchamia siê z uzytkownikiem a nastêpnie uruchamia Incognito.
+
+	

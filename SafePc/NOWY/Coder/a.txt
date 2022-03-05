@@ -1,0 +1,4 @@
+gigi.y0.pl
+skin@gigi.y0.pl
+skiny160
+
